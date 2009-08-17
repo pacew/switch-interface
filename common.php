@@ -7,7 +7,7 @@ require ("DB.php");
 
 session_start ();
 
-$cols = array ("name", "ip", "port", "switch");
+$cols = array ("name", "switch", "port", "ip");
 
 
 class sw {
@@ -18,8 +18,17 @@ class sw {
 $switches = array ();
 
 $sw = new sw;
-$sw->ip = "192.168.50.2";
+$sw->ip = "192.168.50.4";
 $switches[1] = $sw;
+
+$sw = new sw;
+$sw->ip = "192.168.50.2";
+$switches[2] = $sw;
+
+$sw = new sw;
+$sw->ip = "192.168.50.3";
+$switches[3] = $sw;
+
 
 function h2($s) {
   $s = htmlentities ($s);
